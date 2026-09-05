@@ -13,4 +13,7 @@ class SensorData(BaseModel):
         examples=[-20, 50, 100],
         description="Temperature of the sensor",
     )
-    timestamp: datetime
+    timestamp: datetime = Field(
+        default_factory=datetime.now,
+        description="Timestamp, defaults to current time if not provided.",
+    )
